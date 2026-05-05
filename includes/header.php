@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark px-4">
+<nav class="navbar navbar-dark bg-secondary px-4">
     <a class="navbar-brand" href="/propertylisting/index.php">Property Listing</a>
     <div class="d-flex gap-3">
         <a class="nav-link d-inline text-white" href="/propertylisting/index.php">Home</a>
