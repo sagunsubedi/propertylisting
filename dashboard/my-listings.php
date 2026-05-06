@@ -7,8 +7,12 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
-$result = mysqli_query($link, "SELECT * FROM properties WHERE user_id=$user_id ORDER BY created_at DESC");
+if($_SESSION['user_role'] == 'admin'){
+    $result = mysqli_query($link, "SELECT * FROM properties ORDER BY created_at DESC");
+} else {
+    $user_id = $_SESSION['user_id'];
+    $result = mysqli_query($link, "SELECT * FROM properties WHERE user_id=$user_id ORDER BY created_at DESC");
+}
 
 require_once '../includes/header.php';
 ?>

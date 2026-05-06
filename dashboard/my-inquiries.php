@@ -7,11 +7,17 @@ if(!isset($_SESSION['user_id'])){
     exit();
 }
 
-$user_id = $_SESSION['user_id'];
-$result = mysqli_query($link, "SELECT inquiries.*, properties.title FROM inquiries 
-    JOIN properties ON inquiries.property_id = properties.id 
-    WHERE properties.user_id=$user_id 
-    ORDER BY inquiries.created_at DESC");
+if($_SESSION['user_role'] == 'admin'){
+    $result = mysqli_query($link, "SELECT inquiries.*, properties.title FROM inquiries 
+        JOIN properties ON inquiries.property_id = properties.id 
+        ORDER BY inquiries.created_at DESC");
+} else {
+    $user_id =$_SESSION['user_id'];
+    $result = mysqli_query($link, "SELECT inquiries.*, properties.title FROM inquiries 
+        JOIN properties ON inquiries.property_id = properties.id 
+        WHERE properties.user_id=$user_id 
+        ORDER BY inquiries.created_at DESC");
+}
 
 require_once '../includes/header.php';
 ?>
