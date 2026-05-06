@@ -40,7 +40,8 @@ $result = mysqli_query($link, "SELECT * FROM properties $where ORDER BY created_
         <select name="type" class="form-control">
             <option value="">All Types</option>
             <option value="rent" <?= ($_GET['type'] ?? '') == 'rent' ? 'selected' : '' ?>>Rent</option>
-            <option value="sale" <?= ($_GET['type'] ?? '') == 'sale' ? 'selected' : '' ?>>Sale</option>     
+            <option value="sale" <?= ($_GET['type'] ?? '') == 'sale' ? 'selected' : '' ?>>Sale</option> 
+        </select>    
     </div>
 
     <div class="col-md-2">
