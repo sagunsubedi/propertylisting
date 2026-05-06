@@ -12,6 +12,7 @@ if($_SESSION['user_role'] == 'admin'){
         JOIN properties ON inquiries.property_id = properties.id 
         ORDER BY inquiries.created_at DESC");
 } else {
+    
     $user_id =$_SESSION['user_id'];
     $result = mysqli_query($link, "SELECT inquiries.*, properties.title FROM inquiries 
         JOIN properties ON inquiries.property_id = properties.id 

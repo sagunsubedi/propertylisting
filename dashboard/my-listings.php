@@ -36,7 +36,7 @@ require_once '../includes/header.php';
             <?php while($row = mysqli_fetch_assoc($result)): ?>
             <tr>
                 <td><?= $row['title'] ?></td>
-                <td><?= ucfirst($row['type']) ?></td>
+                <td><?= ($row['type']) ?></td>
                 <td>Rs. <?= $row['price'] ?></td>
                 <td><?= $row['location'] ?></td>
                 <td>

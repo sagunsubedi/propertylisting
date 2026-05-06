@@ -39,8 +39,8 @@ $result = mysqli_query($link, "SELECT * FROM properties $where ORDER BY created_
     <div class="col-md-2">
         <select name="type" class="form-control">
             <option value="">All Types</option>
-            <option value="rent" <?= ($_GET['type'] ?? '') == 'rent' ? 'selected' : '' ?>
-            <option value="sale" <?= ($_GET['type'] ?? '') == 'sale' ? 'selected' : '' ?>
+            <option value="rent" <?= ($_GET['type'] ?? '') == 'rent' ? 'selected' : '' ?>>Rent</option>
+            <option value="sale" <?= ($_GET['type'] ?? '') == 'sale' ? 'selected' : '' ?>>Sale</option>     
     </div>
 
     <div class="col-md-2">
